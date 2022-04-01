@@ -1,5 +1,5 @@
 // Esse reducer será responsável por tratar o todas as informações relacionadas as despesas
-import { API_ERROR, API_REQUEST, API_SUCCESS } from '../actions';
+import { ADD_EXPENSES, API_ERROR, API_REQUEST, API_SUCCESS } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -23,6 +23,9 @@ const wallet = (state = INITIAL_STATE, action) => {
       ...state,
       error: action.error,
     };
+  case ADD_EXPENSES:
+    return { ...state,
+      expenses: action.value };
   default:
     return state;
   }

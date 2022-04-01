@@ -2,14 +2,26 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchAPI } from '../actions';
+import Table from '../components/Table';
 
 class Wallet extends React.Component {
   constructor() {
     super();
     this.state = {
       totalDebt: 0,
+      // value: '',
+      // description: '',
+      // currency: '',
+      // method: '',
+      // tag: '',
+      // id: 0,
     };
   }
+
+  // saveExpenses = async () => {
+  //   const { value, description, currency, method, tag, ig } = this.state;
+
+  // }
 
   componentDidMount() {
     const { currencyFetch } = this.props;
@@ -64,6 +76,14 @@ class Wallet extends React.Component {
             </select>
           </label>
         </form>
+        <button
+          type="button"
+          // disabled={}
+          // onClick={}
+        >
+          Adicionar despesa
+        </button>
+        <Table />
       </>
     );
   }

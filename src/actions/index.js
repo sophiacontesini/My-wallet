@@ -3,6 +3,9 @@ export const LOGIN = 'LOGIN';
 export const API_REQUEST = 'API_REQUEST';
 export const API_SUCCESS = 'API_SUCCESS';
 export const API_ERROR = 'API_ERROR';
+export const ADD_EXPENSES = 'EXPENSES';
+
+export const expenses = (value) => ({ type: ADD_EXPENSES, value });
 
 export const loginAtion = (email) => ({ type: LOGIN, email });
 
