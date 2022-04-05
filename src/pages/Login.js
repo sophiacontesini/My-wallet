@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loginAtion } from '../actions';
+import './Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -39,8 +40,10 @@ class Login extends React.Component {
     const { login } = this.props;
     return (
       <div>
-        <form>
+        <p className="title">TrybeWallet</p>
+        <form className="formulario-login">
           Login
+          <br />
           <label htmlFor="email">
             Email
             <input
@@ -67,6 +70,7 @@ class Login extends React.Component {
         </form>
         <Link to="/carteira">
           <button
+            className="button"
             type="button"
             disabled={ buttonDisable }
             onClick={ () => login(email) }

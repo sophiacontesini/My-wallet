@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchAPI } from '../actions';
 import Table from '../components/Table';
+import './Wallet.css';
 
 const initialState = {
   value: '',
@@ -41,23 +42,13 @@ class Wallet extends React.Component {
     });
   }
 
-  // sumValueExpenses = (expenses) => {
-  //   if (expenses.length > 0) {
-  //     const convert = expenses.map((expense) => (
-  //       parseFloat(expense.value)
-  //       * parseFloat(expense.exchangeRates[expense.currency].ask)));
-  //     const totalValue = convert.reduce((acc, curValue) => acc + curValue);
-  //     return totalValue.toFixed(2);
-  //   }
-  //   return 0;
-  // }
-
   render() {
     const { valueMail, currencies, totalValue } = this.props;
     const { value, description, currency, method, tag } = this.state;
     return (
       <>
-        <header>
+        <header className="info-header">
+          <p>Sua Carteira</p>
           <p data-testid="email-field">{ valueMail }</p>
           <label htmlFor="total">
             Despesa Total:
@@ -65,7 +56,7 @@ class Wallet extends React.Component {
           </label>
           <p data-testid="header-currency-field">BRL</p>
         </header>
-        <form>
+        <form className="form">
           <label htmlFor="value">
             {' '}
             Valor:
@@ -138,6 +129,7 @@ class Wallet extends React.Component {
           </label>
         </form>
         <button
+          className="button"
           type="button"
           onClick={ this.handleClickEvent }
         >
