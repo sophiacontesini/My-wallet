@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchAPI } from '../actions';
+import '../App.css';
 import Table from '../components/Table';
-import './Wallet.css';
 
 const initialState = {
   value: '',
@@ -129,7 +129,7 @@ class Wallet extends React.Component {
           </label>
         </form>
         <button
-          className="button"
+          className="btn-wallet"
           type="button"
           onClick={ this.handleClickEvent }
         >

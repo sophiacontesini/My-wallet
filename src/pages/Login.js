@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loginAtion } from '../actions';
-import './Login.css';
+import '../App.css';
 
 class Login extends React.Component {
   constructor() {
@@ -39,14 +39,13 @@ class Login extends React.Component {
     const { buttonDisable, email, password } = this.state;
     const { login } = this.props;
     return (
-      <div>
-        <p className="title">TrybeWallet</p>
+      <div className="container">
         <form className="formulario-login">
-          Login
+          Trybe Wallet
           <br />
           <label htmlFor="email">
-            Email
             <input
+              placeholder="Email"
               type="email"
               id="email"
               name="email"
@@ -57,8 +56,8 @@ class Login extends React.Component {
           </label>
           <label htmlFor="password">
             {' '}
-            Senha
             <input
+              placeholder="Password"
               id="password"
               name="password"
               type="password"
